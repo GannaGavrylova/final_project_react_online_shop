@@ -2,11 +2,12 @@ import axios from "axios";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import BaseAllUrl from "../../utils/api";
+import { useLocation } from "react-router-dom";
 
-function Categories() {
+function Categories({ Limit }) {
   const [allCategories, setAllCategories] = useState([]);
+  const location = useLocation(); // Получаем текущее местоположение (путь)
 
   useEffect(() => {
     async function getAllCategories() {
@@ -23,24 +24,27 @@ function Categories() {
 
   return (
     <div className={styles.categories_container}>
-      <div className={styles.nav_container}>
-        <Link
-          to="/"
-          style={{
-            padding: "8px 16px",
-            backgroundColor: "#dddddd",
-            border: "none",
-            borderRadius: "6px",
-          }}
-        >
-          <button className={styles.btnMainPage}>Main page</button>
-        </Link>
-        <hr />
-        <button>Categories</button>
-      </div>
+      {location.pathname === "/categories" && (
+        <div className={styles.nav_container}>
+          <Link
+            to="/"
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#dddddd",
+              border: "none",
+              borderRadius: "6px",
+            }}
+          >
+            <button className={styles.btnMainPage}>Main page</button>
+          </Link>
+          <hr />
+          <button>Categories</button>
+        </div>
+      )}
+
       <h1>Categories</h1>
       <div className={styles.category_grid}>
-        {allCategories.map((category) => {
+        {allCategories.slice(0, Limit).map((category) => {
           return (
             <div key={category.id}>
               <Link key={category.id} to={`/categories/${category.id}`}>

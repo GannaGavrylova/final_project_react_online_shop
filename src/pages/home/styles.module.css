@@ -7,11 +7,15 @@
   width: 100%;
   min-height: 100vh;
   border: 5px solid blue;
-  padding: 80px 50px 40px 40px;
+  padding: 80px 50px 0px 40px;
 }
 
 .home_container > h1 {
   font-size: 96px;
   color: #ffff;
   margin-bottom: 40px;
+}
+
+.home_categories_container {
+  margin-top: 40px;
 }

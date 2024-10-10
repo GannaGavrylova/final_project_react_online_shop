@@ -29,6 +29,7 @@ hr {
   font-size: 64px;
   color: #282828;
   padding-left: 40px;
+  margin-bottom: 40px;
 }
 
 .category_grid {
@@ -36,4 +37,6 @@ hr {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 16px;
   grid-auto-rows: minmax(100px, auto);
+  margin-left: 40px;
+  margin-right: 40px;
 }

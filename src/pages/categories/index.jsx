@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseAllUrl from "../../utils/api";
 import { useLocation } from "react-router-dom";
+import FilterProducts from "../filterProducts";
 
 function Categories({ Limit }) {
   const [allCategories, setAllCategories] = useState([]);
@@ -41,6 +42,7 @@ function Categories({ Limit }) {
           <button>Categories</button>
         </div>
       )}
+      {location.pathname === "/categories" && <FilterProducts />}
 
       <h1>Categories</h1>
       <div className={styles.category_grid}>

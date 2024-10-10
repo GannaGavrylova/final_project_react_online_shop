@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import { Select, Space } from "antd";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const sortingPrice = [
   "by default",
@@ -11,6 +12,7 @@ const sortingPrice = [
 
 function FilterProducts() {
   const [sorting, setSorting] = useState(sortingPrice[0]);
+  const location = useLocation();
 
   const handleChange = (value) => {
     setSorting(sortingPrice[value]);
@@ -24,10 +26,12 @@ function FilterProducts() {
           <input type="number" name="number" placeholder="to" />
         </div>
 
-        <div className={styles.discount_filter}>
-          <h4>Discounted items </h4>
-          <input type="checkbox" name="checkbox" />
-        </div>
+        {location.pathname === "/sale" ? null : (
+          <div className={styles.discount_filter}>
+            <h4>Discounted items </h4>
+            <input type="checkbox" name="checkbox" />
+          </div>
+        )}
 
         <div className={styles.sortet_filter}>
           <h4>Sorted </h4>

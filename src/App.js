@@ -6,6 +6,7 @@ import Categories from "./pages/categories";
 import Footer from "./components/footer";
 import CategoryPage from "./pages/categoryPage";
 import AllProducts from "./pages/products/allProducts";
+import Discounts from "./pages/discounts";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/:id" element={<CategoryPage />} />
         <Route path="/products/all" element={<AllProducts />} />
+        <Route path="/sale" element={<Discounts />} />
       </Routes>
       <Footer />
     </div>

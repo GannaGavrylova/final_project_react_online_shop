@@ -40,10 +40,11 @@ function Header() {
           All products
         </NavLink>
         <NavLink
-        //   style={({ isActive }) => ({
-        //     color: isActive ? "blue" : "black",
-        //     textDecoration: "none",
-        //   })}
+          to="/sale"
+          style={({ isActive }) => ({
+            color: isActive ? "blue" : "black",
+            textDecoration: "none",
+          })}
         >
           All sales
         </NavLink>

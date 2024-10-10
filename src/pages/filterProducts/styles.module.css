@@ -1,0 +1,73 @@
+.sortet_container {
+  border: 2px solid blue;
+  display: flex;
+  gap: 40px;
+  padding-left: 40px;
+}
+
+.price_filter > h4,
+.discount_filter > h4,
+.sortet_filter > h4 {
+  font-size: 20px;
+  font-weight: 130%;
+  color: 282828;
+}
+
+.price_filter,
+.discount_filter,
+.sortet_filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.price_filter > input {
+  padding: 8px 16px;
+  border: solid #dddddd;
+  border-radius: 6px;
+}
+
+.price_filter > input::placeholder {
+  font-size: 16px;
+  color: rgb(192, 190, 195);
+  font-weight: 126%;
+}
+
+.discount_filter > input {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.price_filter > input:focus {
+  outline: none;
+}
+
+.discount_filter > input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.discount_filter input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 18px;
+  height: 18px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.discount_filter > input[type="checkbox"]:checked::after {
+  opacity: 1;
+}

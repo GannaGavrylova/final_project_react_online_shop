@@ -1,0 +1,33 @@
+.product_container {
+  border: 2px solid green;
+  margin: 40px;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 32px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.product_list {
+  width: 316px; /* Задаем ширину карточки */
+}
+
+.product_list > h4 {
+  margin: 20px 32px 16px 32px;
+  font-size: 20px;
+  font-weight: 130%;
+  color: #282828;
+  text-align: center;
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+  overflow: hidden; /* Скрываем текст, который не помещается */
+  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанного текста */
+  width: 252px;
+  font-weight: 500;
+}
+
+.product_list > span {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0px 32px;
+}

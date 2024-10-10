@@ -1,0 +1,26 @@
+.nav_category {
+  display: flex;
+  gap: 1px;
+  margin: 40px;
+}
+.btn {
+  padding: 8px 16px;
+  background-color: #dddddd;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: #8b8b8b;
+}
+.nav_category > .btn {
+  color: black;
+}
+hr {
+  width: 16px;
+  margin-top: 18px;
+  border: 0.5px solid rgb(209, 206, 206);
+  height: 1px;
+}
+
+.category_container > h1 {
+  margin: 40px;
+}

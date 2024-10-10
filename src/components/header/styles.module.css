@@ -1,0 +1,11 @@
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid red;
+}
+
+.categories_container {
+  display: flex;
+  gap: 32px;
+}

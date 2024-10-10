@@ -1,0 +1,51 @@
+import styles from "./styles.module.css";
+import BaseAllUrl from "../../utils/api";
+
+function ProductsCategory({ products, setProducts }) {
+  return (
+    <div className={styles.product_container}>
+      {products.map((product) => {
+        return (
+          <div className={styles.product_list} key={product.id}>
+            <img
+              style={{
+                width: "316px",
+                height: "284px",
+                objectFit: "cover",
+              }}
+              src={`${BaseAllUrl}${product.image}`}
+              alt={product.image}
+            />
+            <h4>{product.title}</h4>
+            <span>
+              {product.discont_price ? (
+                <>
+                  <p style={{ fontSize: "40px", fontWeight: "700" }}>
+                    ${product.discont_price}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      color: "#8b8b8b",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    ${product.price}
+                  </p>
+                </>
+              ) : (
+                <p style={{ fontSize: "40px", fontWeight: "700" }}>
+                  ${product.price}
+                </p>
+              )}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default ProductsCategory;
+
+// <p>${product.discont_price}</p> : null}

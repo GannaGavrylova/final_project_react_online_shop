@@ -1,0 +1,39 @@
+hr {
+  width: 16px;
+  margin-top: 20px;
+  border: 1px solid rgb(209, 206, 206);
+  height: 1px;
+}
+.categories_container {
+  max-width: 1440px;
+  width: 100%;
+}
+.nav_container {
+  display: flex;
+  margin: 40px;
+}
+
+.nav_container > button,
+.btnMainPage {
+  padding: 8px 16px;
+  background-color: #dddddd;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnMainPage {
+  color: #8b8b8b;
+}
+.categories_container > h1 {
+  font-size: 64px;
+  color: #282828;
+  padding-left: 40px;
+}
+
+.category_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  grid-auto-rows: minmax(100px, auto);
+}

@@ -62,7 +62,7 @@ function Categories({ Limit }) {
               </Link>
               <Link to={`/categories/${category.id}`}></Link>
 
-              <h2>{category.title}</h2>
+              <h2 className={styles.title_categiry}>{category.title}</h2>
             </div>
           );
         })}

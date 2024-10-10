@@ -31,10 +31,11 @@ function Header() {
           Categories
         </NavLink>
         <NavLink
-        //   style={({ isActive }) => ({
-        //     color: isActive ? "blue" : "black",
-        //     textDecoration: "none",
-        //   })}
+          to="/products/all"
+          style={({ isActive }) => ({
+            color: isActive ? "blue" : "black",
+            textDecoration: "none",
+          })}
         >
           All products
         </NavLink>

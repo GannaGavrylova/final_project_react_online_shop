@@ -15,7 +15,7 @@ hr {
 
 .nav_container > button,
 .btnMainPage {
-  padding: 8px 16px;
+  padding: 0px 16px;
   background-color: #dddddd;
   border-radius: 6px;
   border: none;
@@ -39,4 +39,12 @@ hr {
   grid-auto-rows: minmax(100px, auto);
   margin-left: 40px;
   margin-right: 40px;
+}
+
+.title_categiry {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #282828;
 }

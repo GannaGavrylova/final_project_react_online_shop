@@ -5,7 +5,7 @@ import Home from "./pages/home";
 import Categories from "./pages/categories";
 import Footer from "./components/footer";
 import CategoryPage from "./pages/categoryPage";
-import ProductsCategory from "./pages/productsCategory";
+import AllProducts from "./pages/products/allProducts";
 
 function App() {
   return (
@@ -15,10 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/:id" element={<CategoryPage />} />
-        <Route
-          path="/categories/:categoryId/products"
-          element={<ProductsCategory />}
-        />
+        <Route path="/products/all" element={<AllProducts />} />
       </Routes>
       <Footer />
     </div>

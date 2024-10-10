@@ -1,3 +1,10 @@
+.allProducts_container > h1 {
+  margin: 0 0 40px 40px;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 110%;
+}
+
 .products_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -26,4 +33,20 @@
   align-items: center;
   gap: 16px;
   margin: 0px 32px;
+}
+.nav_productsAll {
+  display: flex;
+  margin: 40px 0 40px 40px;
+}
+.nav_productsAll > button,
+.btnMain_page {
+  padding: 0px 16px;
+  background-color: #dddddd;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnMain_page {
+  color: #8b8b8b;
 }

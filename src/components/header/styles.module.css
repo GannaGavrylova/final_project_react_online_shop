@@ -1,8 +1,10 @@
 .header_container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 2px solid red;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .categories_container {

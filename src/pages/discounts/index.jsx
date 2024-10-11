@@ -4,9 +4,12 @@ import BaseAllUrl from "../../utils/api";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import FilterProducts from "../filterProducts";
+import DiscountsItem from "../discountsItem";
+import { useLocation } from "react-router-dom";
 
-function Discounts() {
+function Discounts({ Limit }) {
   const [sales, setSales] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     async function getSale() {
@@ -20,68 +23,37 @@ function Discounts() {
     getSale();
   }, []);
 
-  const discountedSale = sales.filter((sale) => sale.discont_price);
   return (
     <div className={styles.sale_container}>
-      <div className={styles.nav_discounted}>
-        <Link
-          to="/"
-          style={{
-            padding: "8px 16px",
-            backgroundColor: "#dddddd",
-            border: "none",
-            borderRadius: "6px",
-          }}
-        >
-          <button className={styles.btnMain_sale}>Main page</button>
-        </Link>
-        <hr />
-        <button>All sales</button>
-      </div>
-      <h1>Discounted items</h1>
-      <FilterProducts />
-      <div className={styles.sales_grid}>
-        {discountedSale.slice(0, 8).map((sale) => (
-          <div key={sale.id} className={styles.salesList}>
-            <Link key={sale.id}>
-              {sale.image && (
-                <img
-                  style={{
-                    width: "316px",
-                    height: "284px",
-                    objectFit: "cover",
-                  }}
-                  src={`${BaseAllUrl}${sale.image}`}
-                  alt={sale.title}
-                />
-              )}
-            </Link>
-            <h2 className={styles.title_sale}>{sale.title}</h2>
-            <span>
-              {sale.discont_price ? (
-                <>
-                  <p style={{ fontSize: "40px", fontWeight: "700" }}>
-                    ${sale.discont_price}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      color: "#8b8b8b",
-                      textDecoration: "line-through",
-                    }}
-                  >
-                    ${sale.price}
-                  </p>
-                </>
-              ) : (
-                <p style={{ fontSize: "40px", fontWeight: "700" }}>
-                  ${sale.price}
-                </p>
-              )}
-            </span>
-          </div>
-        ))}
-      </div>
+      {location.pathname === "/sale" && (
+        <div className={styles.nav_discounted}>
+          <Link
+            to="/"
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#dddddd",
+              border: "none",
+              borderRadius: "6px",
+            }}
+          >
+            <button className={styles.btnMain_sale}>Main page</button>
+          </Link>
+          <hr />
+          <button>All sales</button>
+        </div>
+      )}
+      {location.pathname === "/sale" ? (
+        <h1>Discounted items</h1>
+      ) : (
+        <div className={styles.sale_homePage}>
+          <h1>Sale</h1>
+          <hr />
+          <button>All sales</button>
+        </div>
+      )}
+
+      {location.pathname === "/sale" && <FilterProducts />}
+      <DiscountsItem sales={sales} Limit={Limit} />
     </div>
   );
 }

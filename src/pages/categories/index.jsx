@@ -44,7 +44,16 @@ function Categories({ Limit }) {
       )}
       {location.pathname === "/categories" && <FilterProducts />}
 
-      <h1>Categories</h1>
+      {location.pathname === "/sale" ? (
+        <h1>Categories</h1>
+      ) : (
+        <div className={styles.categories_homePage}>
+          <h1>Categories</h1>
+          <hr />
+          <button>All categories</button>
+        </div>
+      )}
+
       <div className={styles.category_grid}>
         {allCategories.slice(0, Limit).map((category) => {
           return (

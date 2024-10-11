@@ -48,3 +48,38 @@ hr {
   font-weight: 500;
   color: #282828;
 }
+
+.categories_homePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 80px;
+}
+.categories_homePage > h1 {
+  font-size: 64px;
+  line-height: 110%;
+  color: #282828;
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+.categories_homePage > hr {
+  width: 832px;
+  margin-left: 32px;
+  border: 1 solid #dddddd;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.categories_homePage > button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: grey;
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  line-height: 126%;
+  font-weight: 500;
+  margin-top: 10px;
+}

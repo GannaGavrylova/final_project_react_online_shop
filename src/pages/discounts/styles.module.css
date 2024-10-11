@@ -5,35 +5,6 @@
   line-height: 110%;
 }
 
-.sales_grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
-  grid-auto-rows: minmax(100px, auto);
-  margin-left: 40px;
-  margin-right: 40px;
-  padding-top: 40px;
-}
-
-.title_sale {
-  margin: 20px 32px 16px 32px;
-  font-size: 20px;
-  font-weight: 130%;
-  color: #282828;
-  text-align: center;
-  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
-  overflow: hidden; /* Скрываем текст, который не помещается */
-  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанного текста */
-  width: 252px;
-  font-weight: 500;
-}
-
-.salesList > span {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0px 32px;
-}
 .nav_discounted {
   display: flex;
   margin: 40px 0 40px 40px;
@@ -49,4 +20,37 @@
 
 .btnMain_page {
   color: #8b8b8b;
+}
+
+.sale_homePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 80px;
+}
+.sale_homePage > h1 {
+  font-size: 64px;
+  line-height: 110%;
+  color: #282828;
+  font-weight: bold;
+}
+.sale_homePage > hr {
+  width: 1091px;
+  margin-left: 32px;
+  border: 1 solid #dddddd;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.sale_homePage > button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: grey;
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  line-height: 126%;
+  font-weight: 500;
+  margin-top: 10px;
 }

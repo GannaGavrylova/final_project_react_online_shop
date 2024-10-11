@@ -16,7 +16,7 @@ function DiscountsItem({ Limit, sales }) {
     <div className={styles.sales_grid}>
       {shuffleSales.slice(0, Limit).map((sale) => (
         <div key={sale.id} className={styles.salesList}>
-          <Link key={sale.id}>
+          <Link key={sale.id} to={`/products/${sale.id}`}>
             {sale.image && (
               <img
                 style={{

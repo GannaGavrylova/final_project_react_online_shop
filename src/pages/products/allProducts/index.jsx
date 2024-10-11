@@ -4,9 +4,11 @@ import FilterProducts from "../../filterProducts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseAllUrl from "../../../utils/api";
+import { useParams } from "react-router-dom";
 
 function AllProducts() {
   const [productsAll, setProductsAll] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     async function getAllProducts() {
@@ -42,7 +44,7 @@ function AllProducts() {
         {productsAll.slice(0, 12).map((product) => {
           return (
             <div key={product.id} className={styles.productList}>
-              <Link key={product.id} to={`/categories/${product.id}`}>
+              <Link key={product.id} to={`/products/${product.id}`}>
                 {product.image && (
                   <img
                     style={{
@@ -55,7 +57,6 @@ function AllProducts() {
                   />
                 )}
               </Link>
-              {/* <Link to={`/categories/${category.id}`}></Link> */}
 
               <h2 className={styles.title_product}>{product.title}</h2>
               <span>

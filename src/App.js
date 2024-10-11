@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import CategoryPage from "./pages/categoryPage";
 import AllProducts from "./pages/products/allProducts";
 import Discounts from "./pages/discounts";
+import ProductPage from "./pages/products/productPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/categories/:id" element={<CategoryPage />} />
         <Route path="/products/all" element={<AllProducts />} />
         <Route path="/sale" element={<Discounts Limit={8} />} />
+        <Route path="/products/:id" element={<ProductPage />} />
       </Routes>
       <Footer />
     </div>

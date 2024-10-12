@@ -19,6 +19,9 @@ function CategoryPage() {
         const response = await axios.get(`${BaseAllUrl}/categories/${id}`);
         setCategoryName(response.data.category.title);
         setProducts(response.data.data);
+
+        // Записываем categoryName в localStorage
+        localStorage.setItem("categoryName", response.data.category.title);
       } catch (error) {
         console.error("Error fetching category:", error);
       }
@@ -26,6 +29,10 @@ function CategoryPage() {
 
     fetchCategory();
   }, [id]);
+
+  if (!categoryName) {
+    return <h1>Loading category...</h1>;
+  }
 
   return (
     <div className={styles.category_container}>

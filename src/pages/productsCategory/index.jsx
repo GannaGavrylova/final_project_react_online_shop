@@ -2,13 +2,13 @@ import styles from "./styles.module.css";
 import BaseAllUrl from "../../utils/api";
 import { Link } from "react-router-dom";
 
-function ProductsCategory({ products, setProducts }) {
+function ProductsCategory({ products }) {
   return (
     <div className={styles.product_container}>
       {products.map((product) => {
         return (
           <div className={styles.product_list} key={product.id}>
-            <Link to={`/products/${product.id}`}>
+            <Link key={product.id} to={`/products/${product.id}`}>
               <img
                 style={{
                   width: "316px",
@@ -51,5 +51,3 @@ function ProductsCategory({ products, setProducts }) {
 }
 
 export default ProductsCategory;
-
-// <p>${product.discont_price}</p> : null}

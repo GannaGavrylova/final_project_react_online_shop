@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import BaseAllUrl from "../../utils/api";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Функция для случайной сортировки массива
 function shuffleArray(array) {
@@ -11,12 +11,16 @@ function DiscountsItem({ Limit, sales }) {
   const discountedSale = sales.filter((sale) => sale.discont_price);
 
   const shuffleSales = shuffleArray(discountedSale);
+  const location = useLocation();
 
   return (
     <div className={styles.sales_grid}>
       {shuffleSales.slice(0, Limit).map((sale) => (
         <div key={sale.id} className={styles.salesList}>
-          <Link key={sale.id} to={`/products/${sale.id}`}>
+          <Link
+            key={sale.id}
+            to={location.pathname === "/" ? "/sale" : `/products/${sale.id}`}
+          >
             {sale.image && (
               <img
                 style={{

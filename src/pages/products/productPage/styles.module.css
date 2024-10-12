@@ -1,3 +1,70 @@
+.nav_product_page {
+  display: flex;
+  gap: 1px;
+  margin: 40px;
+}
+.btn_productPage {
+  padding: 8px 16px;
+  background-color: #dddddd;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: #8b8b8b;
+}
+.nav_product_page > .btn_productPage:last-child {
+  color: #282828;
+}
 .product_card_container {
   display: flex;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.product_image > img {
+  width: 780px;
+  height: 572px;
+}
+
+.product_discription {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.product_discription > span {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.product_discription > h2 {
+  font-size: 40px;
+  line-height: 110%;
+  font-weight: bold;
+  color: #282828;
+}
+
+.discript_text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 300px;
+}
+
+.discript_text > h6 {
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 600;
+  color: #282828;
+}
+.discript_text > p {
+  width: 548px;
+  font-size: 16px;
+  color: #282828;
+  line-height: 130%;
+  margin-bottom: 16px;
+  overflow: hidden; /* Скрываем текст, который не помещается */
+  display: -webkit-box; /* Включаем флексбокс для WebKit */
+  -webkit-line-clamp: 10; /* Ограничиваем текст до 3 строк */
+  -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
+  text-overflow: ellipsis; /* Добавляем троеточие */
 }

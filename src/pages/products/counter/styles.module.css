@@ -1,0 +1,35 @@
+.counter_container {
+  display: flex;
+}
+
+.btn_count {
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  color: gray;
+  font-size: 28px;
+}
+.counter_container > button:last-child {
+  margin-left: 32px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 20px;
+  width: 316px;
+  height: 58px;
+}
+
+.counter_container > p {
+  width: 96px;
+  height: 58px;
+  border: 1px solid #dddddd;
+  font-size: 20px;
+  color: #282828;
+  line-height: 130%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: none;
+  border-right: none;
+}

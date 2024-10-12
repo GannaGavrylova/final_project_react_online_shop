@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 import BaseAllUrl from "../../../utils/api";
 import { useParams } from "react-router-dom";
+import Counter from "../counter";
 
 function ProductPage() {
   const [product, setProduct] = useState(null);
@@ -20,15 +21,14 @@ function ProductPage() {
     getProductData();
   }, [id]);
 
-  const { title, price, discont_price, description, image } = product;
   if (!product) {
     return <h1>Loading...</h1>;
   }
-
+  const { title, price, discont_price, description, image } = product;
   return (
-    <div>
+    <div className={styles.product_card_container}>
       this is page Product
-      <div>
+      <div className={styles.product_image}>
         <img
           style={{
             width: "316px",
@@ -38,31 +38,32 @@ function ProductPage() {
           src={`${BaseAllUrl}/${image}`}
           alt={title}
         />
-        <div>
-          <h2>{title}</h2>
-          <span>
-            {discont_price ? (
-              <>
-                <p style={{ fontSize: "40px", fontWeight: "700" }}>
-                  ${discont_price}
-                </p>
-                <p
-                  style={{
-                    fontSize: "20px",
-                    color: "#8b8b8b",
-                    textDecoration: "line-through",
-                  }}
-                >
-                  ${price}
-                </p>
-              </>
-            ) : (
-              <p style={{ fontSize: "40px", fontWeight: "700" }}>${price}</p>
-            )}
-          </span>
-          <h1>{price}</h1>
-          <p>{description}</p>
-        </div>
+      </div>
+      <div className={styles.product_discription}>
+        <h2>{title}</h2>
+        <span>
+          {discont_price ? (
+            <>
+              <p style={{ fontSize: "40px", fontWeight: "700" }}>
+                ${discont_price}
+              </p>
+              <p
+                style={{
+                  fontSize: "20px",
+                  color: "#8b8b8b",
+                  textDecoration: "line-through",
+                }}
+              >
+                ${price}
+              </p>
+            </>
+          ) : (
+            <p style={{ fontSize: "40px", fontWeight: "700" }}>${price}</p>
+          )}
+        </span>
+        <Counter />
+
+        <p>{description}</p>
       </div>
     </div>
   );

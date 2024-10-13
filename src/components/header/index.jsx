@@ -51,7 +51,9 @@ function Header() {
       </div>
 
       <div className={styles.basket_container}>
-        <img src={basket} alt="basket" />
+        <NavLink to="/cart">
+          <img src={basket} alt="basket" />
+        </NavLink>
       </div>
     </header>
   );

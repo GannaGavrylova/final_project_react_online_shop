@@ -8,6 +8,7 @@ import CategoryPage from "./pages/categoryPage";
 import AllProducts from "./pages/products/allProducts";
 import Discounts from "./pages/discounts";
 import ProductPage from "./pages/products/productPage";
+import CartPage from "./pages/basket/cartPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products/all" element={<AllProducts />} />
         <Route path="/sale" element={<Discounts Limit={8} />} />
         <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
       <Footer />
     </div>

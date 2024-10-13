@@ -5,10 +5,14 @@ import BaseAllUrl from "../../../utils/api";
 import { useParams } from "react-router-dom";
 import Counter from "../counter";
 import { Link } from "react-router-dom";
+import { addProduct } from "../../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { Button } from "antd";
 
 function ProductPage() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   // Читаем categoryName из localStorage, если оно там есть
   const storedCategoryName = localStorage.getItem("categoryName");
@@ -23,6 +27,11 @@ function ProductPage() {
     }
     getProductData();
   }, [id]);
+
+  function handleClick() {
+    dispatch(addProduct(product));
+    console.log(product);
+  }
 
   if (!product) {
     return <h1>Loading...</h1>;
@@ -50,6 +59,7 @@ function ProductPage() {
         <hr />
         <button className={styles.btn_productPage}>{product.title}</button>
       </div>
+
       <div className={styles.product_card_container}>
         <div className={styles.product_image}>
           <img src={`${BaseAllUrl}/${image}`} alt={title} />
@@ -76,7 +86,14 @@ function ProductPage() {
               <p style={{ fontSize: "40px", fontWeight: "700" }}>${price}</p>
             )}
           </span>
-          <Counter />
+
+          <div className={styles.count_btn}>
+            <Counter product={product} isInCart={true} />
+            <Button onClick={handleClick} type="primary">
+              Add to cart
+            </Button>
+          </div>
+
           <div className={styles.discript_text}>
             <h6>Description</h6>
             <p>{description}</p>

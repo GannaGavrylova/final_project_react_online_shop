@@ -1,5 +1,6 @@
 .counter_container {
   display: flex;
+  position: relative;
 }
 
 .btn_count {
@@ -10,14 +11,14 @@
   color: gray;
   font-size: 28px;
 }
-.counter_container > button:last-child {
+/* .counter_container > button:last-child {
   margin-left: 32px;
   padding: 16px 32px;
   border-radius: 6px;
   font-size: 20px;
   width: 316px;
   height: 58px;
-}
+} */
 
 .counter_container > p {
   width: 96px;
@@ -33,3 +34,18 @@
   border-left: none;
   border-right: none;
 }
+
+/* .btn_close {
+  max-width: 5px;
+  height: 2px;
+  border: none;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.014);
+  cursor: pointer;
+  position: absolute;
+  top: -5rem;
+  left: 28rem;
+  right: -15rem;
+  margin: 0;
+  padding: 0;
+} */

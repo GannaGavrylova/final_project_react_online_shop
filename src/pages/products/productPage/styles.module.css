@@ -68,3 +68,16 @@
   -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
   text-overflow: ellipsis; /* Добавляем троеточие */
 }
+
+.count_btn {
+  display: flex;
+  gap: 32px;
+}
+
+.count_btn > button {
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 20px;
+  width: 316px;
+  height: 58px;
+}

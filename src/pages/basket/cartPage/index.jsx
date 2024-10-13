@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import CartItem from "../cartItem";
 import { Link } from "react-router-dom";
 import OrderForm from "../orderForm";
-import ModalWindow from "../../modalWindow";
 import React, { useState } from "react";
-
+import ModalWindow from "../../modalWindow";
 function CartPage() {
   const carts = useSelector((state) => state.cart.data);
   const [open, setOpen] = React.useState(false);

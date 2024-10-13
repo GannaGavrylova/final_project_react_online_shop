@@ -1,0 +1,36 @@
+.image_404 {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+.message_notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.message_notFound > h1 {
+  font-size: 64px;
+  line-height: 110%;
+  color: #282828;
+  font-weight: bold;
+}
+.message_notFound > p {
+  font-size: 20px;
+  color: #8b8b8b;
+  font-weight: 500;
+  text-align: center;
+}
+
+.message_notFound button {
+  width: 209px;
+  height: 58px;
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 600;
+  margin-top: 32px;
+}

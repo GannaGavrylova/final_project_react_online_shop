@@ -1,32 +1,26 @@
-import styles from "./styles.module.css";
-
 import { Modal } from "antd";
 
-function ModalWindow({ loading, open, setOpen, setLoading }) {
-  //   const [open, setOpen] = React.useState(false);
-  //   const [loading, setLoading] = React.useState(true);
-  //   const showLoading = () => {
-  //     setOpen(true);
-  //     setLoading(true);
-
-  //     // Simple loading mock. You should add cleanup logic in real world.
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 2000);
-  //   };
+function ModalWindow({ loading, open, setOpen }) {
   return (
-    <>
-      <Modal
-        title={<p>Loading Modal</p>}
-        loading={loading}
-        open={open}
-        onCancel={() => setOpen(false)}
-      >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
-    </>
+    <Modal
+      title={loading ? <h2>Loading...</h2> : <h2>Congratulations!</h2>}
+      open={open}
+      onCancel={() => setOpen(false)}
+      footer={null}
+    >
+      {loading ? (
+        <p style={{ fontSize: "20px" }}>
+          Please wait while we process your order...
+        </p>
+      ) : (
+        <>
+          <p style={{ fontSize: "20px" }}>
+            Your order has been successfully placed on the website. A manager
+            will contact you shortly to confirm your order.
+          </p>
+        </>
+      )}
+    </Modal>
   );
 }
 

@@ -9,6 +9,7 @@ import AllProducts from "./pages/products/allProducts";
 import Discounts from "./pages/discounts";
 import ProductPage from "./pages/products/productPage";
 import CartPage from "./pages/basket/cartPage";
+import NotFound from "./pages/notFound";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/sale" element={<Discounts Limit={8} />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

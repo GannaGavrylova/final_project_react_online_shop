@@ -14,6 +14,7 @@ function ProductsCategory({ products }) {
                   width: "316px",
                   height: "284px",
                   objectFit: "cover",
+                  borderRadius: "12px",
                 }}
                 src={`${BaseAllUrl}${product.image}`}
                 alt={product.title}

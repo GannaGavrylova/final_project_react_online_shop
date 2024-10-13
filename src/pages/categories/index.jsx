@@ -65,6 +65,7 @@ function Categories({ Limit }) {
                       width: "316px",
                       height: "284px",
                       objectFit: "cover",
+                      borderRadius: "12px",
                     }}
                     src={`${BaseAllUrl}${category.image}`}
                     alt={category.title}

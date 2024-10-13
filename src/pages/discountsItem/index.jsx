@@ -27,6 +27,7 @@ function DiscountsItem({ Limit, sales }) {
                   width: "316px",
                   height: "284px",
                   objectFit: "cover",
+                  borderRadius: "12px",
                 }}
                 src={`${BaseAllUrl}${sale.image}`}
                 alt={sale.title}

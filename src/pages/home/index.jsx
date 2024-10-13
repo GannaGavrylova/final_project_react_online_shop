@@ -3,6 +3,7 @@ import { Button } from "antd";
 import Categories from "../categories/index";
 import { Link } from "react-router-dom";
 import Discounts from "../discounts";
+import FormDiscount from "../formDiscount";
 
 function Home() {
   return (
@@ -17,6 +18,9 @@ function Home() {
       </div>
       <div className={styles.home_categories_container}>
         <Categories Limit={4} />
+      </div>
+      <div>
+        <FormDiscount />
       </div>
       <div>
         <Discounts Limit={4} />

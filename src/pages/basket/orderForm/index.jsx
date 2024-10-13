@@ -79,9 +79,6 @@ function OrderForm({ showLoading }) {
             },
           })}
           placeholder="Email"
-          className={`${styles.input} ${
-            errors.email ? styles.error : isValid ? styles.success : ""
-          }`}
         />
         {errors.email && <p>{errors.email.message}</p>}
         <Button onClick={showLoading} type="primary" htmlType="submit">

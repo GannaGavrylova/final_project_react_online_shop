@@ -22,9 +22,8 @@
   border-radius: 6px;
   font-weight: 500;
   line-height: 130%;
-  /* outline-style: none; */
+
   border-color: green;
-  /* transition: border-color 0.3s; */
 }
 .form_container > input::placeholder {
   color: #b0adad;

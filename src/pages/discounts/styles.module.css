@@ -44,7 +44,7 @@
   margin-bottom: 30px;
 }
 
-.sale_homePage > button {
+.sale_homePage button {
   padding: 8px 16px;
   border-radius: 6px;
   color: grey;
@@ -53,4 +53,5 @@
   line-height: 126%;
   font-weight: 500;
   margin-top: 10px;
+  cursor: pointer;
 }

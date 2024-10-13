@@ -48,7 +48,9 @@ function Discounts({ Limit }) {
         <div className={styles.sale_homePage}>
           <h1>Sale</h1>
           <hr />
-          <button>All sales</button>
+          <Link to="/sale">
+            <button>All sales</button>
+          </Link>
         </div>
       )}
 

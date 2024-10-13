@@ -54,6 +54,10 @@
   font-weight: 600;
   margin-right: 10px;
   margin-left: 16px;
+  display: flex;
+}
+.discon_cart > p:first-child {
+  margin-right: 14px;
 }
 .cart_price > p:last-child {
   line-height: 130%;
@@ -61,5 +65,5 @@
   font-size: 20px;
   color: #8b8b8b;
   text-decoration: line-through;
-  margin-left: 4px;
+  margin-left: 14px;
 }

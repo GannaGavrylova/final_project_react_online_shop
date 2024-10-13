@@ -1,3 +1,8 @@
+.containerCard {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+}
 .shop_cart_title {
   display: flex;
   justify-content: center;

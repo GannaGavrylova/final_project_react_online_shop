@@ -26,8 +26,26 @@ function CartItem({ id, title, image, price, discont_price }) {
         </div>
         <div className={styles.cart_price}>
           <Counter />
-          <p className={styles.discon_cart}>${discont_price}</p>
-          <p>${price}</p>
+          <span className={styles.discon_cart}>
+            {discont_price ? (
+              <>
+                <p style={{ fontSize: "40px", fontWeight: "700" }}>
+                  ${discont_price}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                    color: "#8b8b8b",
+                    textDecoration: "line-through",
+                  }}
+                >
+                  ${price}
+                </p>
+              </>
+            ) : (
+              <p style={{ fontSize: "40px", fontWeight: "700" }}>${price}</p>
+            )}
+          </span>
         </div>
       </div>
     </div>

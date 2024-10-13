@@ -3,9 +3,23 @@ import { Button } from "antd";
 import { useSelector } from "react-redux";
 import CartItem from "../cartItem";
 import { Link } from "react-router-dom";
+import OrderForm from "../orderForm";
+import ModalWindow from "../../modalWindow";
+import React, { useState } from "react";
 
 function CartPage() {
   const carts = useSelector((state) => state.cart.data);
+  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const showLoading = () => {
+    setOpen(true);
+    setLoading(true);
+
+    // Simple loading mock. You should add cleanup logic in real world.
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  };
 
   return (
     <div>
@@ -24,12 +38,18 @@ function CartPage() {
           </Link>
         </div>
       ) : (
-        <div>
-          {carts.map((cart) => {
-            return <CartItem key={cart.id} {...cart} />;
-          })}
+        <div className={styles.containerCard}>
+          <div>
+            {carts.map((cart) => {
+              return <CartItem key={cart.id} {...cart} />;
+            })}
+          </div>
+          <div className={styles.orderFormCard}>
+            <OrderForm showLoading={showLoading} />
+          </div>
         </div>
       )}
+      <ModalWindow open={open} loading={loading} setOpen={setOpen} />
     </div>
   );
 }

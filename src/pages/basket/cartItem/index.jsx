@@ -16,6 +16,7 @@ function CartItem({ id, title, image, price, discont_price, quantity }) {
   const handleChangeInput = (id, currentValue) => {
     dispatch(updateQuantity({ id, quantity: currentValue }));
   };
+
   return (
     <div className={styles.cart_container}>
       <div className={styles.cart_image}>

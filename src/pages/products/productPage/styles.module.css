@@ -34,6 +34,7 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  position: relative;
 }
 
 .product_discription > h2 {
@@ -80,4 +81,14 @@
   font-size: 20px;
   width: 316px;
   height: 58px;
+}
+
+.discount_percentage {
+  position: absolute;
+  top: 16px;
+  left: 236px;
+  padding: 4px 8px;
+  background-color: #0d50ff;
+  border-radius: 6px;
+  color: #ffffff;
 }

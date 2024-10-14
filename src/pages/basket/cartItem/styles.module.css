@@ -98,3 +98,13 @@
   text-align: center;
   padding-left: 10px;
 }
+
+.discount_percentage {
+  position: absolute;
+  top: 16px;
+  left: 316px;
+  padding: 4px 8px;
+  background-color: #0d50ff;
+  border-radius: 6px;
+  color: #ffffff;
+}

@@ -34,6 +34,9 @@
   gap: 16px;
   margin: 0px 32px;
 }
+.productList {
+  position: relative;
+}
 .nav_productsAll {
   display: flex;
   margin: 40px 0 40px 40px;
@@ -49,4 +52,14 @@
 
 .btnMain_page {
   color: #8b8b8b;
+}
+
+.discount_percentage {
+  position: absolute;
+  top: 16px;
+  left: 233px;
+  padding: 4px 8px;
+  background-color: #0d50ff;
+  border-radius: 6px;
+  color: #ffffff;
 }

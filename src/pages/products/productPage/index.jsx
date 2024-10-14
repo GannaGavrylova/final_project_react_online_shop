@@ -31,7 +31,6 @@ function ProductPage() {
 
   function handleClick() {
     dispatch(addProduct(product));
-    console.log("Product added to cart!", product);
     dispatch(resetState());
   }
 
@@ -41,6 +40,11 @@ function ProductPage() {
 
   const { title, price, discont_price, description, image, categoryId } =
     product;
+  const discountPercentage = product.discont_price
+    ? Math.round(
+        ((product.price - product.discont_price) / product.price) * 100
+      )
+    : 0;
   return (
     <div>
       <div className={styles.nav_product_page}>
@@ -82,6 +86,9 @@ function ProductPage() {
                   }}
                 >
                   ${price}
+                </p>
+                <p className={styles.discount_percentage}>
+                  -{discountPercentage}%
                 </p>
               </>
             ) : (

@@ -27,3 +27,16 @@
   gap: 16px;
   margin: 0px 32px;
 }
+
+.salesList {
+  position: relative;
+}
+.discount_percentage {
+  position: absolute;
+  top: 16px;
+  left: 233px;
+  padding: 4px 8px;
+  background-color: #0d50ff;
+  border-radius: 6px;
+  color: #ffffff;
+}

@@ -6,12 +6,16 @@ function ProductsCategory({ products }) {
   return (
     <div className={styles.product_container}>
       {products.map((product) => {
+        const discountPercentage = product.discont_price
+          ? Math.round(
+              ((product.price - product.discont_price) / product.price) * 100
+            )
+          : 0;
         return (
           <div className={styles.product_list} key={product.id}>
             <Link key={product.id} to={`/products/${product.id}`}>
               <img
                 style={{
-                  width: "316px",
                   height: "284px",
                   objectFit: "cover",
                   borderRadius: "12px",
@@ -36,6 +40,9 @@ function ProductsCategory({ products }) {
                     }}
                   >
                     ${product.price}
+                  </p>
+                  <p className={styles.discount_percentage}>
+                    -{discountPercentage}%
                   </p>
                 </>
               ) : (

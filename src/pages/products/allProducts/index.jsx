@@ -4,11 +4,9 @@ import FilterProducts from "../../filterProducts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseAllUrl from "../../../utils/api";
-import { useParams } from "react-router-dom";
 
 function AllProducts() {
   const [productsAll, setProductsAll] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     async function getAllProducts() {
@@ -21,6 +19,7 @@ function AllProducts() {
     }
     getAllProducts();
   }, []);
+
   return (
     <div className={styles.allProducts_container}>
       <div className={styles.nav_productsAll}>
@@ -42,6 +41,11 @@ function AllProducts() {
       <FilterProducts />
       <div className={styles.products_grid}>
         {productsAll.slice(0, 12).map((product) => {
+          const discountPercentage = product.discont_price
+            ? Math.round(
+                ((product.price - product.discont_price) / product.price) * 100
+              )
+            : 0;
           return (
             <div key={product.id} className={styles.productList}>
               <Link key={product.id} to={`/products/${product.id}`}>
@@ -73,6 +77,9 @@ function AllProducts() {
                       }}
                     >
                       ${product.price}
+                    </p>
+                    <p className={styles.discount_percentage}>
+                      -{discountPercentage}%
                     </p>
                   </>
                 ) : (

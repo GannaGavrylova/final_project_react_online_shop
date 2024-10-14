@@ -39,3 +39,23 @@
   line-height: 130%;
   font-weight: 500;
 }
+
+.total_price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total_price > p:first-child,
+.total_items {
+  font-size: 40px;
+  color: #8b8b8b;
+  line-height: 130%;
+  font-weight: 500;
+}
+
+.total_price > p:last-child {
+  font-size: 64px;
+  color: #282828;
+  line-height: 110%;
+  font-weight: bold;
+}

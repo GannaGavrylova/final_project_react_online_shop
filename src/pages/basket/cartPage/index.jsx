@@ -23,6 +23,14 @@ function CartPage() {
     }, 3000);
   };
 
+  const totalPrice = carts.reduce((total, item) => {
+    const itemPrice = item.discont_price
+      ? Number(item.discont_price)
+      : Number(item.price);
+    return total + itemPrice * item.quantity;
+  }, 0);
+
+  const totalItems = carts.reduce((total, item) => total + item.quantity, 0);
   return (
     <div>
       <div className={styles.shop_cart_title}>
@@ -47,7 +55,11 @@ function CartPage() {
             })}
           </div>
           <div className={styles.orderFormCard}>
-            <OrderForm showLoading={showLoading} />
+            <OrderForm
+              showLoading={showLoading}
+              totalPrice={totalPrice}
+              totalItems={totalItems}
+            />
           </div>
         </div>
       )}

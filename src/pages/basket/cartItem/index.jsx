@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 import BaseAllUrl from "../../../utils/api";
-import Counter from "../../products/counter";
 import close from "../../../assets/icons/close.svg";
 import {
   removeCart,

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import styles from "./styles.module.css";
 import { Button } from "antd";
 
-function OrderForm({ showLoading }) {
+function OrderForm({ showLoading, totalPrice, totalItems }) {
   const {
     register,
     handleSubmit,
@@ -26,8 +26,12 @@ function OrderForm({ showLoading }) {
   return (
     <div className={styles.container_form}>
       <h1>Order details</h1>
-      <p>{}</p>
-      <p>Total: {}</p>
+      <p className={styles.total_items}>{totalItems} items</p>
+      <div className={styles.total_price}>
+        <p>Total </p>
+        <p>${totalPrice}</p>
+      </div>
+
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form_container}>
         <input
           {...register("username", {

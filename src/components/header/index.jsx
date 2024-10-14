@@ -2,8 +2,11 @@ import styles from "./styles.module.css";
 import logo from "../../assets/icons/logo.svg";
 import basket from "../../assets/icons/basket.svg";
 import { NavLink } from "react-router-dom";
+import { selectCartCount } from "../../redux/slices/cartSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const cartCount = useSelector(selectCartCount);
   return (
     <header className={styles.header_container}>
       <div className={styles.logo_container}>
@@ -53,6 +56,9 @@ function Header() {
       <div className={styles.basket_container}>
         <NavLink to="/cart">
           <img src={basket} alt="basket" />
+          {cartCount > 0 && (
+            <span className={styles.cart_count}>{cartCount}</span>
+          )}
         </NavLink>
       </div>
     </header>

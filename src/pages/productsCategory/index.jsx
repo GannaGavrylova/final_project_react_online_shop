@@ -16,6 +16,7 @@ function ProductsCategory({ products }) {
             <Link key={product.id} to={`/products/${product.id}`}>
               <img
                 style={{
+                  width: "316px",
                   height: "284px",
                   objectFit: "cover",
                   borderRadius: "12px",

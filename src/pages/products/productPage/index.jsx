@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { addProduct } from "../../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { Button } from "antd";
+import { resetState } from "../../../redux/slices/counterSlice";
 
 function ProductPage() {
   const [product, setProduct] = useState(null);
@@ -30,7 +31,8 @@ function ProductPage() {
 
   function handleClick() {
     dispatch(addProduct(product));
-    console.log(product);
+    console.log("Product added to cart!", product);
+    dispatch(resetState());
   }
 
   if (!product) {

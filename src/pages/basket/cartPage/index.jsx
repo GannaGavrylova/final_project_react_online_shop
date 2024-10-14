@@ -6,17 +6,20 @@ import { Link } from "react-router-dom";
 import OrderForm from "../orderForm";
 import React, { useState } from "react";
 import ModalWindow from "../../modalWindow";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../../redux/slices/cartSlice";
+
 function CartPage() {
+  const dispatch = useDispatch();
   const carts = useSelector((state) => state.cart.data);
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const showLoading = () => {
     setOpen(true);
     setLoading(true);
-
-    // Simple loading mock. You should add cleanup logic in real world.
     setTimeout(() => {
       setLoading(false);
+      dispatch(clearCart());
     }, 3000);
   };
 

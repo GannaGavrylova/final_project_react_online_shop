@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { minus, plus } from "../../../redux/slices/counterSlice";
+import { minus, plus, resetState } from "../../../redux/slices/counterSlice";
 
 function Counter() {
   const dispatch = useDispatch();

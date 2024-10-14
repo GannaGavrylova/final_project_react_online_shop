@@ -32,6 +32,12 @@
   border-radius: 6px;
   padding: 16px 32px;
   background-color: #2451c6;
+  font-size: 20px;
+  color: #ffffff;
+}
+.formContainer > input:focus {
+  outline: none;
+  border: 1px solid blue;
 }
 .formContainer > input::placeholder {
   color: #ffffff;

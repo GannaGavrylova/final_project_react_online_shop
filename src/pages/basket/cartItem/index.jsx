@@ -2,11 +2,21 @@ import styles from "./styles.module.css";
 import BaseAllUrl from "../../../utils/api";
 import Counter from "../../products/counter";
 import close from "../../../assets/icons/close.svg";
-import { removeCart } from "../../../redux/slices/cartSlice";
+import {
+  removeCart,
+  changeQuantity,
+  updateQuantity,
+} from "../../../redux/slices/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 
-function CartItem({ id, title, image, price, discont_price }) {
+function CartItem({ id, title, image, price, discont_price, quantity }) {
   const dispatch = useDispatch();
+  const handleClickChangeBtn = (method, id) => {
+    dispatch(changeQuantity({ method, value: 1, id }));
+  };
+  const handleChangeInput = (id, currentValue) => {
+    dispatch(updateQuantity({ id, quantity: currentValue }));
+  };
   return (
     <div className={styles.cart_container}>
       <div className={styles.cart_image}>
@@ -25,7 +35,19 @@ function CartItem({ id, title, image, price, discont_price }) {
           </button>
         </div>
         <div className={styles.cart_price}>
-          <Counter />
+          <div className={styles.counter_container_btn}>
+            <button onClick={() => handleClickChangeBtn("decrement", id)}>
+              -
+            </button>
+            <input
+              onChange={(e) => handleChangeInput(id, e.target.value)}
+              type="number"
+              min="1"
+              value={quantity}
+            />
+            <button onClick={() => handleClickChangeBtn("plus", id)}>+</button>
+          </div>
+
           <span className={styles.discon_cart}>
             {discont_price ? (
               <>

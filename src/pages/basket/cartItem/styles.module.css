@@ -67,3 +67,34 @@
   text-decoration: line-through;
   margin-left: 14px;
 }
+.counter_container_btn {
+  display: flex;
+}
+.counter_container_btn > button {
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  color: gray;
+  font-size: 28px;
+}
+
+.counter_container_btn > input {
+  width: 90px;
+  height: 58px;
+  border: 1px solid #dddddd;
+  font-size: 20px;
+  color: #282828;
+  line-height: 130%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: none;
+  border-right: none;
+  padding-left: 35px;
+}
+.counter_container_btn > input::placeholder {
+  text-align: center;
+  padding-left: 10px;
+}

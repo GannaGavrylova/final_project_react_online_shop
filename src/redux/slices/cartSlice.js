@@ -76,21 +76,21 @@ const cartSlice = createSlice({
       state.data = [];
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(formOrder.pending, (state) => {
-        state.orderStatus = "loading";
-      })
-      .addCase(formOrder.fulfilled, (state, action) => {
-        state.orderStatus = "succeeded";
-        state.data = action.payload;
-      })
-      .addCase(formOrder.rejected, (state, action) => {
-        state.orderStatus = "failed";
-        state.success = false;
-        state.orderError = action.payload;
-      });
-  },
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(formOrder.pending, (state) => {
+  //       state.orderStatus = "loading";
+  //     })
+  //     .addCase(formOrder.fulfilled, (state, action) => {
+  //       state.orderStatus = "succeeded";
+  //       state.data = action.payload;
+  //     })
+  //     .addCase(formOrder.rejected, (state, action) => {
+  //       state.orderStatus = "failed";
+  //       state.success = false;
+  //       state.orderError = action.payload;
+  //     });
+  // },
 });
 
 export const {
@@ -103,6 +103,9 @@ export const {
 export default cartSlice.reducer;
 
 export const selectCartCount = createSelector(
-  (state) => state.cart.data,
-  (CartItems) => CartItems.reduce((total, item) => total + item.quantity, 0)
+  (state) => state.cart.data || [],
+  (CartItems) =>
+    Array.isArray(CartItems)
+      ? CartItems.reduce((total, item) => total + item.quantity, 0)
+      : 0
 );

@@ -1,6 +1,9 @@
 import styles from "./styles.module.css";
 import BaseAllUrl from "../../utils/api";
 import { Link, useLocation } from "react-router-dom";
+import AddToCartButton from "../../components/addToCartButton";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/slices/cartSlice";
 
 // Функция для случайной сортировки массива
 function shuffleArray(array) {
@@ -9,10 +12,13 @@ function shuffleArray(array) {
 
 function DiscountsItem({ Limit, sales }) {
   const discountedSale = sales.filter((sale) => sale.discont_price);
-
   const shuffleSales = shuffleArray(discountedSale);
   const location = useLocation();
+  const dispatch = useDispatch();
 
+  function handleAddTocart(sale) {
+    dispatch(addProduct({ ...sale, quantity: 1 })); // Добавляем товар с количеством 1
+  }
   return (
     <div className={styles.sales_grid}>
       {shuffleSales.slice(0, Limit).map((sale) => {
@@ -38,6 +44,10 @@ function DiscountsItem({ Limit, sales }) {
                 />
               )}
             </Link>
+            <div className={styles.addToCartButton}>
+              <AddToCartButton onClick={() => handleAddTocart(sale)} />
+            </div>
+            <div className={styles.addToCartButton}></div>
             <h2 className={styles.title_sale}>{sale.title}</h2>
             <span>
               {sale.discont_price ? (

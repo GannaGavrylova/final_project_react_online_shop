@@ -4,6 +4,7 @@ import FilterProducts from "../../filterProducts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BaseAllUrl from "../../../utils/api";
+import ProductCard from "../productCard";
 
 function AllProducts() {
   const [productsAll, setProductsAll] = useState([]);
@@ -39,61 +40,13 @@ function AllProducts() {
       </div>
       <h1>All products</h1>
       <FilterProducts />
-      <div className={styles.products_grid}>
-        {productsAll.slice(0, 12).map((product) => {
-          const discountPercentage = product.discont_price
-            ? Math.round(
-                ((product.price - product.discont_price) / product.price) * 100
-              )
-            : 0;
-          return (
-            <div key={product.id} className={styles.productList}>
-              <Link key={product.id} to={`/products/${product.id}`}>
-                {product.image && (
-                  <img
-                    style={{
-                      width: "316px",
-                      height: "284px",
-                      objectFit: "cover",
-                    }}
-                    src={`${BaseAllUrl}${product.image}`}
-                    alt={product.title}
-                  />
-                )}
-              </Link>
 
-              <h2 className={styles.title_product}>{product.title}</h2>
-              <span>
-                {product.discont_price ? (
-                  <>
-                    <p style={{ fontSize: "40px", fontWeight: "700" }}>
-                      ${product.discont_price}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "20px",
-                        color: "#8b8b8b",
-                        textDecoration: "line-through",
-                      }}
-                    >
-                      ${product.price}
-                    </p>
-                    <p className={styles.discount_percentage}>
-                      -{discountPercentage}%
-                    </p>
-                  </>
-                ) : (
-                  <p style={{ fontSize: "40px", fontWeight: "700" }}>
-                    ${product.price}
-                  </p>
-                )}
-              </span>
-            </div>
-          );
-        })}
-      </div>
+      <ProductCard productsAll={productsAll} />
     </div>
   );
 }
 
 export default AllProducts;
+
+// onMouseEnter={() => setIsHoverButton(product.id)}
+// onMouserLeave={() => setIsHoverButton(null)}

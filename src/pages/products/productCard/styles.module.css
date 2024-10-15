@@ -1,4 +1,4 @@
-.sales_grid {
+.products_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 16px;
@@ -7,8 +7,7 @@
   margin-right: 40px;
   padding-top: 40px;
 }
-
-.title_sale {
+.title_product {
   margin: 20px 32px 16px 32px;
   font-size: 20px;
   font-weight: 130%;
@@ -20,15 +19,13 @@
   width: 252px;
   font-weight: 500;
 }
-
-.salesList > span {
+.productList > span {
   display: flex;
   align-items: center;
   gap: 16px;
   margin: 0px 32px;
 }
-
-.salesList {
+.productList {
   position: relative;
 }
 .discount_percentage {
@@ -44,7 +41,8 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.salesList:hover .addToCartButton {
+
+.productList:hover .addToCartButton {
   opacity: 1;
 }
 .addToCartButton:hover {

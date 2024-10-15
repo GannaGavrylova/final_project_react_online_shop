@@ -1,9 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { createSelector } from "@reduxjs/toolkit";
+import { orderSendRequest } from "../../utils/api";
 
 const initialState = {
   data: [],
+  orderStatus: "idle",
+  orderError: null,
 };
+
+// Асинхронный action для отправки данных на сервер
+export const formOrder = createAsyncThunk(
+  "cart/formOrder",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response = await orderSendRequest(formData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 const cartSlice = createSlice({
   name: "cart",
@@ -60,6 +76,21 @@ const cartSlice = createSlice({
       state.data = [];
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(formOrder.pending, (state) => {
+        state.orderStatus = "loading";
+      })
+      .addCase(formOrder.fulfilled, (state, action) => {
+        state.orderStatus = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(formOrder.rejected, (state, action) => {
+        state.orderStatus = "failed";
+        state.success = false;
+        state.orderError = action.payload;
+      });
+  },
 });
 
 export const {
@@ -75,7 +106,3 @@ export const selectCartCount = createSelector(
   (state) => state.cart.data,
   (CartItems) => CartItems.reduce((total, item) => total + item.quantity, 0)
 );
-
-// addProduct(state, action) {
-//   state.data.push(action.payload);
-// },

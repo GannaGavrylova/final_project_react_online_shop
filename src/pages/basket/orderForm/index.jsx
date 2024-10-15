@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import styles from "./styles.module.css";
 import { Button } from "antd";
+import { formOrder } from "../../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 function OrderForm({ showLoading, totalPrice, totalItems }) {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -13,8 +16,9 @@ function OrderForm({ showLoading, totalPrice, totalItems }) {
     mode: "onChange",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (formData) => {
+    console.log(formData);
+    dispatch(formOrder(formData));
     reset();
   };
 

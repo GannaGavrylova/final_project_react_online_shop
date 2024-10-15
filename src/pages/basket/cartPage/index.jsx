@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import CartItem from "../cartItem";
 import { Link } from "react-router-dom";
 import OrderForm from "../orderForm";
-import React, { useState } from "react";
+import React from "react";
 import ModalWindow from "../../modalWindow";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../../redux/slices/cartSlice";

@@ -28,6 +28,7 @@ function FormDiscount() {
       }, 3000);
     }
   }, [success, dispatch]);
+
   return (
     <div className={styles.container_formDiscount}>
       <div className={styles.title_formDiscount}>

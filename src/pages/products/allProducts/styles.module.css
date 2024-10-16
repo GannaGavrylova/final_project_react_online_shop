@@ -21,3 +21,8 @@
 .btnMain_page {
   color: #8b8b8b;
 }
+@media (max-width: 1100px) {
+}
+
+@media (max-width: 576px) {
+}

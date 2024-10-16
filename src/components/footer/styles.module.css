@@ -44,3 +44,9 @@
 .socials_container > a {
   padding-right: 16px;
 }
+
+@media (max-width: 1100px) {
+}
+
+@media (max-width: 576px) {
+}

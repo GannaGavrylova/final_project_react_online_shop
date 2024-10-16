@@ -3,11 +3,14 @@
   min-height: 600px;
   background-image: url("../../assets/images/dog_cat.png");
   background-repeat: no-repeat;
-  background-size: 1440px 600px;
+  /* background-size: 1440px 600px; */
+  background-size: cover;
   max-width: 1440px;
   width: 100%;
-  border: 5px solid blue;
   padding: 80px 50px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .homePageContainer {
   min-height: 100vh;
@@ -20,4 +23,27 @@
 
 .home_categories_container {
   margin-top: 40px;
+}
+/* Адаптивные стили для десктопов */
+@media (max-width: 1100px) {
+  .home_container {
+    padding: 60px 30px 0 20px;
+  }
+  .home_container > h1 {
+    font-size: 72px;
+  }
+}
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 576px) {
+  .home_container {
+    padding: 40px 20px 0 10px;
+    text-align: center;
+  }
+  .home_container > h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  .home_categories_container {
+    margin-top: 20px;
+  }
 }

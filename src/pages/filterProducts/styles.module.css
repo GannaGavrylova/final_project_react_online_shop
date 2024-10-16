@@ -1,8 +1,9 @@
 .sortet_container {
-  border: 2px solid blue;
   display: flex;
   gap: 40px;
   padding-left: 40px;
+  box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.2);
+  height: 50px;
 }
 
 .price_filter > h4,
@@ -24,7 +25,7 @@
 
 .price_filter > input {
   padding: 8px 16px;
-  border: solid #dddddd;
+  border: 1px solid #dddddd;
   border-radius: 6px;
 }
 
@@ -62,7 +63,7 @@
   left: 6px;
   width: 18px;
   height: 18px;
-  border: solid white;
+  border: 2px solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   opacity: 0;
@@ -70,4 +71,54 @@
 }
 .discount_filter > input[type="checkbox"]:checked::after {
   opacity: 1;
+}
+@media (max-width: 1100px) {
+  .sortet_container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 0 10px 20px;
+    height: auto; /* Автоматическая высота для гибкости */
+  }
+  .price_filter,
+  .discount_filter,
+  .sortet_filter {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .price_filter > h4,
+  .discount_filter > h4,
+  .sortet_filter > h4 {
+    font-size: 18px;
+  }
+  .price_filter > input {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sortet_container {
+    gap: 12px;
+    padding-left: 10px;
+  }
+  .price_filter,
+  .discount_filter,
+  .sortet_filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .price_filter > h4,
+  .discount_filter > h4,
+  .sortet_filter > h4 {
+    font-size: 16px;
+  }
+  .price_filter > input {
+    width: 100%;
+    padding: 6px 10px;
+  }
+  .discount_filter > input {
+    width: 30px;
+    height: 30px;
+  }
 }

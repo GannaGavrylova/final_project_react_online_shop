@@ -50,3 +50,53 @@
 .addToCartButton:hover {
   background-color: #171616;
 }
+@media (max-width: 1100px) {
+  .sales_grid {
+    grid-template-columns: repeat(2, 1fr); /* Уменьшаем количество колонок */
+    margin-left: 20px;
+    margin-right: 20px;
+    grid-gap: 12px; /* Уменьшаем расстояние между элементами */
+  }
+  .title_sale {
+    font-size: 18px;
+    width: 100%; /* Заголовок занимает всю ширину */
+  }
+  .discount_percentage {
+    left: 80%; /* Смещаем метку скидки влево */
+  }
+}
+
+@media (max-width: 576px) {
+  .sales_grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    grid-gap: 8px;
+    padding-top: 20px;
+  }
+  .title_sale {
+    font-size: 16px;
+    margin: 10px 16px 8px 16px;
+    width: 100%; /* Заголовок на всю ширину */
+  }
+  .salesList > span {
+    gap: 8px;
+    margin: 0px auto;
+  }
+  .discount_percentage {
+    left: 70%;
+    top: 8px;
+    padding: 2px 4px;
+  }
+
+  .salesList {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+      -4px -4px 12px rgba(255, 255, 255, 0.8);
+  }
+  .salesList img {
+    display: flex;
+    margin: 0 auto;
+  }
+}

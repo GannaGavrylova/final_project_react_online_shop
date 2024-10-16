@@ -75,24 +75,23 @@ const cartSlice = createSlice({
       state.data = [];
     },
   },
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(formOrder.pending, (state) => {
-  //       console.log("Order form submission started");
-  //       state.orderStatus = "loading";
-  //     })
-  //     .addCase(formOrder.fulfilled, (state, action) => {
-  //       console.log("Order form submitted successfully", action.payload);
-  //       state.orderStatus = "succeeded";
-  //       state.data = action.payload;
-  //     })
-  //     .addCase(formOrder.rejected, (state, action) => {
-  //       console.log("Order form submission failed", action.payload);
-  //       state.orderStatus = "failed";
-  //       state.success = false;
-  //       state.orderError = action.payload;
-  //     });
-  // },
+  extraReducers: (builder) => {
+    builder
+      .addCase(formOrder.pending, (state) => {
+        console.log("Order form submission started");
+        state.orderStatus = "loading";
+      })
+      .addCase(formOrder.fulfilled, (state, action) => {
+        console.log("Order form submitted successfully", action.payload);
+        state.orderStatus = "succeeded";
+      })
+      .addCase(formOrder.rejected, (state, action) => {
+        console.log("Order form submission failed", action.payload);
+        state.orderStatus = "failed";
+        state.success = false;
+        state.orderError = action.payload;
+      });
+  },
 });
 
 export const {

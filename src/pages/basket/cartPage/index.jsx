@@ -12,6 +12,7 @@ import { clearCart } from "../../../redux/slices/cartSlice";
 function CartPage() {
   const dispatch = useDispatch();
   const carts = useSelector((state) => state.cart.data);
+
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const showLoading = () => {
@@ -55,6 +56,7 @@ function CartPage() {
         <div className={styles.containerCard}>
           <div>
             {carts.map((cart) => {
+              console.log(carts);
               return <CartItem key={cart.id} {...cart} />;
             })}
           </div>

@@ -5,12 +5,16 @@ export const sendSaleRequest = (formData) => {
   return axios.post(`${BaseAllUrl}/sale/send`, formData);
 };
 
-export const orderSendRequest = async (formData) => {
-  try {
-    const response = await axios.post(`${BaseAllUrl}/order/send`, formData);
-    return response;
-  } catch (error) {
-    throw error;
-  }
+// export const orderSendRequest = async (formData) => {
+//   try {
+//     const response = await axios.post(`${BaseAllUrl}/order/send`, formData);
+//     return response;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+export const orderSendRequest = (formData) => {
+  return axios.post(`${BaseAllUrl}/order/send`, formData);
 };
 export default BaseAllUrl;

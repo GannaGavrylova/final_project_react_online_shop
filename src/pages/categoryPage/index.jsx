@@ -12,13 +12,15 @@ function CategoryPage() {
   const { id } = useParams();
   const [categoryName, setCategoryName] = useState(null);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]); // Отфильтрованные продукты
 
   useEffect(() => {
     const fetchCategory = async () => {
       try {
         const response = await axios.get(`${BaseAllUrl}/categories/${id}`);
         setCategoryName(response.data.category.title);
-        setProducts(response.data.data);
+        setProducts(response.data.data); // Устанавливаем все товары категории
+        setFilteredProducts(response.data.data); // Изначально показываем все товары
 
         // Записываем categoryName в localStorage
         localStorage.setItem("categoryName", response.data.category.title);
@@ -29,6 +31,11 @@ function CategoryPage() {
 
     fetchCategory();
   }, [id]);
+
+  // Функция для обновления отфильтрованных товаров
+  const handleFilter = (filtered) => {
+    setFilteredProducts(filtered); // Обновляем отфильтрованные товары
+  };
 
   if (!categoryName) {
     return <h1>Loading category...</h1>;
@@ -48,8 +55,8 @@ function CategoryPage() {
         {categoryName && <button className={styles.btn}>{categoryName}</button>}
       </div>
       <h1>{categoryName}</h1>
-      <FilterProducts />
-      <ProductsCategory setProducts={setProducts} products={products} />
+      <FilterProducts products={products} onFilter={handleFilter} />
+      <ProductsCategory setProducts={setProducts} products={filteredProducts} />
     </div>
   );
 }

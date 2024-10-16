@@ -29,24 +29,24 @@ const saleSlice = createSlice({
       state.error = null;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(sendSaleForm.pending, (state) => {
-  //       state.loading = true;
-  //       state.success = false;
-  //       state.error = null;
-  //     })
-  //     .addCase(sendSaleForm.fulfilled, (state, action) => {
-  //       state.loading = false;
-  //       state.success = true;
-  //       state.error = null;
-  //     })
-  //     .addCase(sendSaleForm, (state, action) => {
-  //       state.loading = false;
-  //       state.success = false;
-  //       state.error = action.payload || "Something went wrong";
-  //     });
-  // },
+  extraReducers: (builder) => {
+    builder
+      .addCase(sendSaleForm.pending, (state) => {
+        state.loading = true;
+        state.success = false;
+        state.error = null;
+      })
+      .addCase(sendSaleForm.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+      })
+      .addCase(sendSaleForm.rejected, (state, action) => {
+        state.loading = false;
+        state.success = false;
+        state.error = action.payload || "Something went wrong";
+      });
+  },
 });
 
 export const { resetState } = saleSlice.actions;

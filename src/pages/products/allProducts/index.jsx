@@ -8,19 +8,25 @@ import ProductCard from "../productCard";
 
 function AllProducts() {
   const [productsAll, setProductsAll] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]); // Отфильтрованные товары
 
+  // Получаем все продукты при загрузке компонента
   useEffect(() => {
     async function getAllProducts() {
       try {
         const response = await axios.get(`${BaseAllUrl}/products/all`);
         setProductsAll(response.data);
+        setFilteredProducts(response.data); // Изначально все товары
       } catch (error) {
-        console.log("Error");
+        console.log("Error", error);
       }
     }
     getAllProducts();
   }, []);
 
+  const handleFilter = (filtered) => {
+    setFilteredProducts(filtered);
+  };
   return (
     <div className={styles.allProducts_container}>
       <div className={styles.nav_productsAll}>
@@ -39,9 +45,9 @@ function AllProducts() {
         <button>All products</button>
       </div>
       <h1>All products</h1>
-      <FilterProducts />
+      <FilterProducts products={productsAll} onFilter={handleFilter} />
 
-      <ProductCard productsAll={productsAll} />
+      <ProductCard productsAll={filteredProducts} />
     </div>
   );
 }

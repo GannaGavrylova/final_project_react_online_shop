@@ -9,19 +9,29 @@ import { useLocation } from "react-router-dom";
 
 function Discounts({ Limit }) {
   const [sales, setSales] = useState([]);
+  const [filteredSales, setFilteredSales] = useState([]); // Отфильтрованные товары
   const location = useLocation();
 
   useEffect(() => {
     async function getSale() {
       try {
         const response = await axios.get(`${BaseAllUrl}/products/all`);
-        setSales(response.data);
+        const discountedProducts = response.data.filter(
+          (product) => product.discont_price !== null
+        );
+        setSales(discountedProducts); // Товары со скидкой
+        setFilteredSales(discountedProducts); // Изначально все товары отображаются
       } catch (error) {
         console.log(error);
       }
     }
     getSale();
   }, []);
+
+  // Функция для обновления отфильтрованных товаров
+  const handleFilter = (filteredProducts) => {
+    setFilteredSales(filteredProducts);
+  };
 
   return (
     <div className={styles.sale_container}>
@@ -54,8 +64,10 @@ function Discounts({ Limit }) {
         </div>
       )}
 
-      {location.pathname === "/sale" && <FilterProducts />}
-      <DiscountsItem sales={sales} Limit={Limit} />
+      {location.pathname === "/sale" && (
+        <FilterProducts products={sales} onFilter={handleFilter} />
+      )}
+      <DiscountsItem sales={filteredSales} Limit={Limit} />
     </div>
   );
 }

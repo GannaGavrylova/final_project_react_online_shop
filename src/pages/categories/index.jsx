@@ -42,7 +42,6 @@ function Categories({ Limit }) {
           <button>Categories</button>
         </div>
       )}
-      {location.pathname === "/categories" && <FilterProducts />}
 
       {location.pathname === "/sale" ? (
         <h1>Categories</h1>

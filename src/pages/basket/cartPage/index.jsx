@@ -56,7 +56,6 @@ function CartPage() {
         <div className={styles.containerCard}>
           <div>
             {carts.map((cart) => {
-              console.log(carts);
               return <CartItem key={cart.id} {...cart} />;
             })}
           </div>

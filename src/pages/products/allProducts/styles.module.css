@@ -8,6 +8,7 @@
 .nav_productsAll {
   display: flex;
   margin: 40px 0 40px 40px;
+  white-space: nowrap;
 }
 .nav_productsAll > button,
 .btnMain_page {
@@ -22,7 +23,21 @@
   color: #8b8b8b;
 }
 @media (max-width: 1100px) {
+  .allProducts_container > h1 {
+    margin: 0 0 20px 20px;
+    font-size: 52px;
+  }
+  .nav_productsAll {
+    margin: 20px 0 20px 20px;
+  }
 }
 
 @media (max-width: 576px) {
+  .allProducts_container > h1 {
+    margin: 0 0 10px 10px;
+    font-size: 34px;
+  }
+  .nav_productsAll {
+    margin: 20px 0 10px 10px;
+  }
 }

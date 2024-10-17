@@ -54,6 +54,7 @@
   font-weight: 500;
   margin-top: 10px;
   cursor: pointer;
+  white-space: nowrap;
 }
 @media (max-width: 1100px) {
   .sale_container > h1 {
@@ -76,8 +77,10 @@
     font-size: 48px;
   }
   .sale_homePage button {
-    padding: 6px 12px;
-    font-size: 14px;
+    max-width: 150px;
+    padding: 6px 16px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 }
 

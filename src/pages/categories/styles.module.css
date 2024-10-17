@@ -11,7 +11,6 @@ hr {
 .nav_container {
   display: flex;
   margin: 40px;
-  flex-wrap: wrap; /* Позволяет кнопкам переноситься на следующую строку */
 }
 
 .nav_container > button,
@@ -74,7 +73,7 @@ hr {
   margin-bottom: 30px;
 }
 
-.categories_homePage > button {
+.categories_homePage button {
   padding: 8px 16px;
   border-radius: 6px;
   color: grey;
@@ -83,10 +82,12 @@ hr {
   line-height: 126%;
   font-weight: 500;
   margin-top: 10px;
+  white-space: nowrap;
+  cursor: pointer;
 }
 @media (max-width: 1100px) {
   .nav_container {
-    margin: 20px; /* Уменьшаем отступы */
+    margin: 20px;
   }
   .categories_container > h1 {
     font-size: 48px;
@@ -97,12 +98,16 @@ hr {
     margin-left: 20px;
     margin-right: 20px;
   }
-  .categories_homePage > h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+  .categories_homePage {
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .categories_homePage > hr {
-    width: 100%; /* Ширина линии становится 100% */
+    width: 80%;
+    margin: 10px 0 0 10px;
+  }
+  .categories_homePage > h1 {
+    font-size: 48px;
   }
 }
 
@@ -124,20 +129,30 @@ hr {
     margin-top: 20px;
   }
   .categories_homePage {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    flex-wrap: nowrap;
   }
   .categories_homePage > h1 {
-    font-size: 32px; /* Уменьшаем размер заголовка для мобильных */
+    font-size: 32px;
     margin-bottom: 20px;
   }
   .categories_homePage > hr {
     width: 100%;
+    margin: 30px 0 0 10px;
   }
-  .categories_homePage > button {
-    font-size: 14px;
-    padding: 6px 12px;
+  .categories_homePage button {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-top: 25px;
+  }
+  .contegoriesCard {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+      -4px -4px 12px rgba(255, 255, 255, 0.8);
+  }
+  .contegoriesCard img {
+    display: flex;
+    margin: 0 auto;
   }
 }

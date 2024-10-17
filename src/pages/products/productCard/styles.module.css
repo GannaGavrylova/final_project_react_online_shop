@@ -49,7 +49,57 @@
   background-color: #171616;
 }
 @media (max-width: 1100px) {
+  .products_grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .title_product {
+    font-size: 18px;
+    width: 200px;
+  }
+
+  .discount_percentage {
+    left: 180px;
+  }
 }
 
 @media (max-width: 576px) {
+  .products_grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 20px;
+  }
+  .productList {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+      -4px -4px 12px rgba(255, 255, 255, 0.8);
+  }
+  .productList img {
+    display: flex;
+    margin: 0 auto;
+  }
+  .productList > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title_product {
+    font-size: 16px;
+    margin: 16px 16px 12px 16px;
+    width: auto; /* позволяем тексту занять ширину контейнера */
+    text-align: center;
+    white-space: normal; /* снимаем ограничения перенос текста на новую строку */
+    overflow: visible; /* снимаем скрытие текст, который не помещается */
+    text-overflow: unset; /* убираем троеточие в конце обрезанного текста */
+  }
+
+  .discount_percentage {
+    left: 350px;
+  }
+
+  .addToCartButton {
+    font-size: 14px;
+  }
 }

@@ -61,7 +61,47 @@
   color: #ffffff;
 }
 @media (max-width: 1100px) {
+  .container_formDiscount {
+    margin: 60px 5px 30px 30px;
+  }
+  .containerImageAndForm {
+    flex-direction: column;
+    gap: 20;
+  }
+  .formContainer {
+    width: 80%;
+    margin: 40px auto;
+  }
+  .title_formDiscount {
+    font-size: 28px;
+    padding-top: 34px;
+    line-height: 150%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 576px) {
+  .container_formDiscount {
+    margin: 40px 10px 20px 10px;
+    border-radius: 8px;
+  }
+  .title_formDiscoun {
+    font-size: 24px;
+    padding-top: 16px;
+    text-align: center;
+  }
+  .containerImageAndForm {
+    gap: 16px;
+  }
+  .formContainer > input {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .formContainer > input::placeholder {
+    font-size: 16px;
+  }
+  .formContainer > button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
 }

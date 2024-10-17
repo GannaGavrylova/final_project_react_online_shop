@@ -6,11 +6,11 @@ import { Button } from "antd";
 
 function NotFound() {
   return (
-    <div>
+    <>
       <div className={styles.image_404}>
-        <img src={four} alt="four" />
+        <img className={styles.fourNumber} src={four} alt="four" />
         <img src={cat_dog} alt="cat_dog" />
-        <img src={four} alt="four" />
+        <img className={styles.fourNumber} src={four} alt="four" />
       </div>
       <div className={styles.message_notFound}>
         <h1>Page Not Found</h1>
@@ -22,7 +22,7 @@ function NotFound() {
           <Button type="primary">Go Home</Button>
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 

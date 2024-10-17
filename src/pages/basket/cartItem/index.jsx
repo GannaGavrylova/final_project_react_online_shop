@@ -6,7 +6,7 @@ import {
   changeQuantity,
   updateQuantity,
 } from "../../../redux/slices/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function CartItem({ id, title, image, price, discont_price, quantity }) {
   const dispatch = useDispatch();

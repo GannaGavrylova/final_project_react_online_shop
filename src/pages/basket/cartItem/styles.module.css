@@ -109,7 +109,70 @@
   color: #ffffff;
 }
 @media (max-width: 1100px) {
+  .cart_container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .container_components {
+    min-width: auto;
+    padding: 16px;
+  }
+  .cart_title > h4 {
+    font-size: 18px;
+  }
+  .cart_title {
+    margin-right: 0;
+  }
+  .cart_price > .discon_cart {
+    font-size: 32px;
+  }
+  .cart_price > p:last-child {
+    font-size: 18px;
+  }
+  .counter_container_btn > button,
+  .counter_container_btn > input {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+  .counter_container_btn > input {
+    padding-left: 10px;
+  }
 }
 
 @media (max-width: 576px) {
+  .cart_image > img {
+    width: 100%;
+    height: auto;
+  }
+  .container_components {
+    min-width: auto;
+    padding: 16px;
+  }
+  .cart_title > h4 {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  .cart_price > .discon_cart {
+    font-size: 28px;
+  }
+  .cart_price > p:last-child {
+    font-size: 16px;
+  }
+  .counter_container_btn {
+    justify-content: space-between;
+  }
+  .counter_container_btn > button,
+  .counter_container_btn > input {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .discount_percentage {
+    top: 12px;
+    left: auto;
+    right: 12px;
+  }
 }

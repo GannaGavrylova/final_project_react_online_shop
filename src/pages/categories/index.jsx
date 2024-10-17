@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseAllUrl from "../../utils/api";
 import { useLocation } from "react-router-dom";
-import FilterProducts from "../filterProducts";
 
 function Categories({ Limit }) {
   const [allCategories, setAllCategories] = useState([]);
@@ -43,20 +42,22 @@ function Categories({ Limit }) {
         </div>
       )}
 
-      {location.pathname === "/sale" ? (
+      {location.pathname === "/categories" ? (
         <h1>Categories</h1>
       ) : (
         <div className={styles.categories_homePage}>
           <h1>Categories</h1>
           <hr />
-          <button>All categories</button>
+          <Link to="/categories">
+            <button>All categories</button>
+          </Link>
         </div>
       )}
 
       <div className={styles.category_grid}>
         {allCategories.slice(0, Limit).map((category) => {
           return (
-            <div key={category.id}>
+            <div className={styles.contegoriesCard} key={category.id}>
               <Link key={category.id} to={`/categories/${category.id}`}>
                 {category.image && (
                   <img

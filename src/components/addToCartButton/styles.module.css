@@ -37,3 +37,11 @@
   color: #282828;
   border: 1px solid #282828;
 }
+@media (max-width: 1100px) {
+}
+
+@media (max-width: 576px) {
+  .blueButton {
+    left: 100px;
+  }
+}

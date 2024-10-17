@@ -18,8 +18,6 @@ function FilterProducts({ products, onFilter, showDiscountFilter = true }) {
   const [isDicounted, setIsDicounted] = useState(false);
   const location = useLocation();
 
-  console.log(isDicounted);
-
   // Функция фильтрации товаров
   const filterProducts = () => {
     let filteredProducts = [...products];
@@ -33,7 +31,6 @@ function FilterProducts({ products, onFilter, showDiscountFilter = true }) {
       filteredProducts = filteredProducts.filter(
         (product) => product.price <= Number(priceTo)
       );
-      console.log(priceTo);
     }
     // Фильтрация по скидкам
     if (isDicounted) {
